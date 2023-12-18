@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuadros</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="https://www.epdata.es/favicon.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.3/html2canvas.min.js"></script>
+</head>
+
+<body>
+    <style>
+        /* ------------- ESTRUCTURA PRINCIPAL ------------- */
+
+        html {
+            font-family: 'Heebo';
+        }
+
+        body {}
+
+        main {
+            width: 1660px;
+            height: 928px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #fondo-main {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Coloca la imagen detrás del contenido */
+            object-fit: cover;
+            /* Asegura que la imagen cubra todo el contenedor sin distorsionarse */
+        }
+
+        header {
+            height: 20%;
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            margin: 0 auto;
+        }
+
+        #contenido-grafico {
+            height: 70%;
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 1rem;
+        }
+
+        #pie-grafico {
+            height: 10%;
+            width: 90%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        #logo-champions {
+            width: 8rem;
+            padding-top: 6rem;
+        }
+
+        #titular {
+            margin: 1rem;
+            text-align: center;
+            line-height: 1.3;
+            font-size: 2.4rem;
+        }
+
+        /* ------------- BLOQUES ------------- */
+
+        .bloque-horizontal {
+            height: 50%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        #bloque-superior {}
+
+        #bloque-inferior {}
+
+        .vs {
+            padding: 4rem;
+            color: rgb(255, 191, 95);
+            font-weight: bolder;
+            font-size: 2rem
+        }
+
+        select {
+            width: 5rem;
+        }
+
+        /* ------------- PARTIDOS ------------- */
+
+        .partido {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            width: 20%;
+        }
+
+        #partido-1 {}
+
+        #partido-2 {}
+
+        #partido-3 {}
+
+        #partido-4 {}
+
+        /* ------------- PARTIDOS ------------- */
+
+        .equipo-logo {
+            height: 10rem;
+            width: 10rem;
+        }
+
+        .equipo-titulo {
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            width: 25rem;
+            white-space: nowrap;
+        }
+
+        .divisoria-horizontal{
+            background-color: white;
+            width: 1px;
+            margin:0;
+            height: 50%;
+        }
+
+        .divisoria-vertical{
+            color:white
+        }
+
+        /* ---- PARTIDO 1 ---- */
+
+        #partido-1 {}
+
+        /* LOCAL */
+
+        #partido-1-local {}
+
+        #partido-1-local-img {}
+
+        #partido-1-local-texto {}
+
+        /* VISITANTE */
+
+        #partido-1-visitante {}
+
+        #partido-1-visitante-img {}
+
+        #partido-1-visitante-texto {}
+
+        /* ---- PARTIDO 2 ---- */
+
+        #partido-2 {}
+
+        /* LOCAL */
+
+        #partido-2-local {}
+
+        #partido-2-local-img {}
+
+        #partido-2-local-texto {}
+
+        /* VISITANTE */
+
+        #partido-2-visitante {}
+
+        #partido-2-visitante-img {}
+
+        #partido-2-visitante-texto {}
+
+        /* ---- PARTIDO 3 ---- */
+
+        #partido-3 {}
+
+        /* LOCAL */
+
+        #partido-3-local {}
+
+        #partido-3-local-img {}
+
+        #partido-3-local-texto {}
+
+        /* VISITANTE */
+
+        #partido-3-visitante {}
+
+        #partido-3-visitante-img {}
+
+        #partido-3-visitante-texto {}
+
+        /* ---- PARTIDO 4 ---- */
+
+        #partido-4 {}
+
+        /* LOCAL */
+
+        #partido-4-local {}
+
+        #partido-4-local-img {}
+
+        #partido-4-local-texto {}
+
+        /* VISITANTE */
+
+        #partido-4-visitante {}
+
+        #partido-4-visitante-img {}
+
+        #partido-4-visitante-texto {}
+
+
+        /* ------------- FOOTER ------------- */
+
+        footer {
+            width: 70%;
+            padding-top: 14rem;
+            padding-bottom: 14rem;
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+        }
+
+        .desplegables {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .bloque-horizontal-desplegable {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+            /* Ajustar según sea necesario */
+        }
+
+        .desplegable-partido {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 4rem;
+            padding: 1rem;
+            background-color: rgb(230, 230, 230);
+        }
+
+        .desplegable-partido label,
+        .desplegable-partido select {
+            margin: 0 5px;
+        }
+
+        .desplegable-partido p {
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        /*  BOTÓN  */
+
+        button {
+            margin: 2rem;
+            padding: 0.2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background-color: #00bcd4;
+            color: white;
+            height: 2rem;
+            width: 18rem;
+            border: #87afb1;
+
+        }
+
+        button:hover {
+            background-color: #8dd0d4;
+            cursor: pointer;
+        }
+
+        button:active {
+            background-color: #007780;
+            transform: scale(0.95);
+        }
+    </style>
+    <main>
+        <img src="img/fondo-champions.png" alt="Fondo" id="fondo-main">
+        <header>
+            <img id="logo-champions" src="./img/logo-champions.png" />
+            <h1 id="titular">Equipos españoles en los octavos de final de la UEFA Champions League 2023/24</h1>
+        </header>
+        <div id="contenido-grafico">
+            <div id="bloque-superior" class="bloque-horizontal">
+                <div id="partido-1" class="partido">
+                    <div id="partido-1-local"><img id="partido-1-local-img" src="" class="equipo-logo" /><span
+                            id="partido-1-local-texto" class="equipo-titulo"></span></div>
+                    <p class="vs">VS</p>
+                    <div id="partido-1-visitante"><img id="partido-1-visitante-img" src="" class="equipo-logo" /><span
+                            id="partido-1-visitante-texto" class="equipo-titulo"></span></div>
+                </div>
+                <div class="divisoria-horizontal"></div>
+                <div id="partido-2" class="partido">
+                    <div id="partido-2-local"><img id="partido-2-local-img" src="" class="equipo-logo" /><span
+                            id="partido-2-local-texto" class="equipo-titulo"></span></div>
+                    <p class="vs">VS</p>
+                    <div id="partido-2-visitante"><img id="partido-2-visitante-img" src="" class="equipo-logo" /><span
+                            id="partido-2-visitante-texto" class="equipo-titulo"></span></div>
+                </div>
+            </div>
+            <hr class="divisoria-vertical">
+            <div id="bloque-inferior" class="bloque-horizontal">
+                <div id="partido-3" class="partido">
+                    <div id="partido-3-local"><img id="partido-3-local-img" src="" class="equipo-logo" /><span
+                            id="partido-3-local-texto" class="equipo-titulo"></span></div>
+                    <p class="vs">VS</p>
+                    <div id="partido-3-visitante"><img id="partido-3-visitante-img" src="" class="equipo-logo" /><span
+                            id="partido-3-visitante-texto" class="equipo-titulo"></span></div>
+                </div>
+                <div class="divisoria-horizontal"></div>
+                <div id="partido-4" class="partido">
+                    <div id="partido-4-local"><img id="partido-4-local-img" src="" class="equipo-logo" /><span
+                            id="partido-4-local-texto" class="equipo-titulo"></span></div>
+                    <p class="vs">VS</p>
+                    <div id="partido-4-visitante"><img id="partido-4-visitante-img" src="" class="equipo-logo" /><span
+                            id="partido-4-visitante-texto" class="equipo-titulo"></span></div>
+                </div>
+            </div>
+        </div>
+        <div id="pie-grafico">
+            <img src="img/logoepdata.png" style="height:2.6rem; margin: 0 auto">
+        </div>
+
+    </main>
+</body>
+<footer>
+    <div class="desplegables">
+        <div class="bloque-horizontal-desplegable">
+
+            <div id="desplegables-partido-1" class="desplegable-partido">
+                <p>Partido 1</p>
+                <label for="opciones">Local</label>
+                <select name="elegirpartido1local" id="elegirpartido1local" onchange="seleccionarequipolocal1()">
+                    <option value=""></option>
+                    <option value="ARS">Arsenal (ENG)</option>
+                    <option value="ATL">Atlético (ESP)</option>
+                    <option value="BAR">Barcelona (ESP)</option>
+                    <option value="BAY">Bayern (GER)</option>
+                    <option value="BOR">Borussia Dortmund (GER)</option>
+                    <option value="MAN">Manchester City (ENG)</option>
+                    <option value="RMD">Real Madrid (ESP)</option>
+                    <option value="RSO">Real Sociedad (ESP)</option>
+                    <option value="COP">Copenhague (DEN)</option>
+                    <option value="INT">Inter (ITA)</option>
+                    <option value="LAZ">Lazio (ITA)</option>
+                    <option value="LEZ">Leipzig (GER)</option>
+                    <option value="NAP">Nápoles (ITA)</option>
+                    <option value="OPO">Oporto (POR)</option>
+                    <option value="PSG">PSG (FRA)</option>
+                    <option value="PSV">PSV Eindhoven (NED)</option>
+                </select>
+
+                <p>VS</p>
+
+                <div id="desplegable-partido-1-visitante" class="desplegable-opcion">
+                    <label for="opciones">Visitante</label>
+                    <select name="elegirpartido1visitante" id="elegirpartido1visitante"
+                        onchange="seleccionarequipovisitante1()">
+                        <option value=""></option>
+                        <option value="ARS">Arsenal (ENG)</option>
+                        <option value="ATL">Atlético (ESP)</option>
+                        <option value="BAR">Barcelona (ESP)</option>
+                        <option value="BAY">Bayern (GER)</option>
+                        <option value="BOR">Borussia Dortmund (GER)</option>
+                        <option value="MAN">Manchester City (ENG)</option>
+                        <option value="RMD">Real Madrid (ESP)</option>
+                        <option value="RSO">Real Sociedad (ESP)</option>
+                        <option value="COP">Copenhague (DEN)</option>
+                        <option value="INT">Inter (ITA)</option>
+                        <option value="LAZ">Lazio (ITA)</option>
+                        <option value="LEZ">Leipzig (GER)</option>
+                        <option value="NAP">Nápoles (ITA)</option>
+                        <option value="OPO">Oporto (POR)</option>
+                        <option value="PSG">Paris (FRA)</option>
+                        <option value="PSV">PSV Eindhoven (NED)</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div id="desplegables-partido-2" class="desplegable-partido">
+
+                <p>Partido 2</p>
+                <label for="opciones">Local</label>
+                <select name="elegirpartido2local" id="elegirpartido2local" onchange="seleccionarequipolocal2()">
+                    <option value=""></option>
+                    <option value="ARS">Arsenal (ENG)</option>
+                    <option value="ATL">Atlético (ESP)</option>
+                    <option value="BAR">Barcelona (ESP)</option>
+                    <option value="BAY">Bayern (GER)</option>
+                    <option value="BOR">Borussia Dortmund (GER)</option>
+                    <option value="MAN">Manchester City (ENG)</option>
+                    <option value="RMD">Real Madrid (ESP)</option>
+                    <option value="RSO">Real Sociedad (ESP)</option>
+                    <option value="COP">Copenhague (DEN)</option>
+                    <option value="INT">Inter (ITA)</option>
+                    <option value="LAZ">Lazio (ITA)</option>
+                    <option value="LEZ">Leipzig (GER)</option>
+                    <option value="NAP">Nápoles (ITA)</option>
+                    <option value="OPO">Oporto (POR)</option>
+                    <option value="PSG">Paris (FRA)</option>
+                    <option value="PSV">PSV Eindhoven (NED)</option>
+                </select>
+
+                <p>VS</p>
+
+                <div id="desplegable-partido-2-visitante" class="desplegable-opcion">
+                    <label for="opciones">Visitante</label>
+                    <select name="elegirpartido2visitante" id="elegirpartido2visitante"
+                        onchange="seleccionarequipovisitante2()">
+                        <option value=""></option>
+                        <option value="ARS">Arsenal (ENG)</option>
+                        <option value="ATL">Atlético (ESP)</option>
+                        <option value="BAR">Barcelona (ESP)</option>
+                        <option value="BAY">Bayern (GER)</option>
+                        <option value="BOR">Borussia Dortmund (GER)</option>
+                        <option value="MAN">Manchester City (ENG)</option>
+                        <option value="RMD">Real Madrid (ESP)</option>
+                        <option value="RSO">Real Sociedad (ESP)</option>
+                        <option value="COP">Copenhague (DEN)</option>
+                        <option value="INT">Inter (ITA)</option>
+                        <option value="LAZ">Lazio (ITA)</option>
+                        <option value="LEZ">Leipzig (GER)</option>
+                        <option value="NAP">Nápoles (ITA)</option>
+                        <option value="OPO">Oporto (POR)</option>
+                        <option value="PSG">Paris (FRA)</option>
+                        <option value="PSV">PSV Eindhoven (NED)</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="bloque-horizontal-desplegable">
+
+
+
+            <div id="desplegables-partido-3" class="desplegable-partido">
+                <p>Partido 3</p>
+                <label for="opciones">Local</label>
+                <select name="elegirpartido3local" id="elegirpartido3local" onchange="seleccionarequipolocal3()">
+                    <option value=""></option>
+                    <option value="ARS">Arsenal (ENG)</option>
+                    <option value="ATL">Atlético (ESP)</option>
+                    <option value="BAR">Barcelona (ESP)</option>
+                    <option value="BAY">Bayern (GER)</option>
+                    <option value="BOR">Borussia Dortmund (GER)</option>
+                    <option value="MAN">Manchester City (ENG)</option>
+                    <option value="RMD">Real Madrid (ESP)</option>
+                    <option value="RSO">Real Sociedad (ESP)</option>
+                    <option value="COP">Copenhague (DEN)</option>
+                    <option value="INT">Inter (ITA)</option>
+                    <option value="LAZ">Lazio (ITA)</option>
+                    <option value="LEZ">Leipzig (GER)</option>
+                    <option value="NAP">Nápoles (ITA)</option>
+                    <option value="OPO">Oporto (POR)</option>
+                    <option value="PSG">Paris (FRA)</option>
+                    <option value="PSV">PSV Eindhoven (NED)</option>
+                </select>
+
+                <p>VS</p>
+
+                <div id="desplegable-partido-3-visitante" class="desplegable-opcion">
+                    <label for="opciones">Visitante</label>
+                    <select name="elegirpartido3visitante" id="elegirpartido3visitante"
+                        onchange="seleccionarequipovisitante3()">
+                        <option value=""></option>
+                        <option value="ARS">Arsenal (ENG)</option>
+                        <option value="ATL">Atlético (ESP)</option>
+                        <option value="BAR">Barcelona (ESP)</option>
+                        <option value="BAY">Bayern (GER)</option>
+                        <option value="BOR">Borussia Dortmund (GER)</option>
+                        <option value="MAN">Manchester City (ENG)</option>
+                        <option value="RMD">Real Madrid (ESP)</option>
+                        <option value="RSO">Real Sociedad (ESP)</option>
+                        <option value="COP">Copenhague (DEN)</option>
+                        <option value="INT">Inter (ITA)</option>
+                        <option value="LAZ">Lazio (ITA)</option>
+                        <option value="LEZ">Leipzig (GER)</option>
+                        <option value="NAP">Nápoles (ITA)</option>
+                        <option value="OPO">Oporto (POR)</option>
+                        <option value="PSG">Paris (FRA)</option>
+                        <option value="PSV">PSV Eindhoven (NED)</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div id="desplegables-partido-4" class="desplegable-partido">
+                <p>Partido 4</p>
+
+                <label for="opciones">Local</label>
+                <select name="elegirpartido4local" id="elegirpartido4local" onchange="seleccionarequipolocal4()">
+                    <option value=""></option>
+                    <option value="ARS">Arsenal (ENG)</option>
+                    <option value="ATL">Atlético (ESP)</option>
+                    <option value="BAR">Barcelona (ESP)</option>
+                    <option value="BAY">Bayern (GER)</option>
+                    <option value="BOR">Borussia Dortmund (GER)</option>
+                    <option value="MAN">Manchester City (ENG)</option>
+                    <option value="RMD">Real Madrid (ESP)</option>
+                    <option value="RSO">Real Sociedad (ESP)</option>
+                    <option value="COP">Copenhague (DEN)</option>
+                    <option value="INT">Inter (ITA)</option>
+                    <option value="LAZ">Lazio (ITA)</option>
+                    <option value="LEZ">Leipzig (GER)</option>
+                    <option value="NAP">Nápoles (ITA)</option>
+                    <option value="OPO">Oporto (POR)</option>
+                    <option value="PSG">Paris (FRA)</option>
+                    <option value="PSV">PSV Eindhoven (NED)</option>
+                </select>
+
+                <p>VS</p>
+
+                <div id="desplegable-partido-4-visitante" class="desplegable-opcion">
+                    <label for="opciones">Visitante</label>
+                    <select name="elegirpartido4visitante" id="elegirpartido4visitante"
+                        onchange="seleccionarequipovisitante4()">
+                        <option value=""></option>
+                        <option value="ARS">Arsenal (ENG)</option>
+                        <option value="ATL">Atlético (ESP)</option>
+                        <option value="BAR">Barcelona (ESP)</option>
+                        <option value="BAY">Bayern (GER)</option>
+                        <option value="BOR">Borussia Dortmund (GER)</option>
+                        <option value="MAN">Manchester City (ENG)</option>
+                        <option value="RMD">Real Madrid (ESP)</option>
+                        <option value="RSO">Real Sociedad (ESP)</option>
+                        <option value="COP">Copenhague (DEN)</option>
+                        <option value="INT">Inter (ITA)</option>
+                        <option value="LAZ">Lazio (ITA)</option>
+                        <option value="LEZ">Leipzig (GER)</option>
+                        <option value="NAP">Nápoles (ITA)</option>
+                        <option value="OPO">Oporto (POR)</option>
+                        <option value="PSG">Paris (FRA)</option>
+                        <option value="PSV">PSV Eindhoven (NED)</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <button id="boton-descarga">Descargar imagen</button>
+</footer>
+
+<script>
+
+    const escudosEquipos = {
+        "ARS": "./logos/arsenal.png",
+        "ATL": "./logos/atletico.png",
+        "BAR": "./logos/barcelona.png",
+        "BAY": "./logos/bayern.png",
+        "BOR": "./logos/borusia.png",
+        "MAN": "./logos/city.png",
+        "COP": "./logos/copenhaguen.png",
+        "INT": "./logos/inter.png",
+        "LAZ": "./logos/lazio.png",
+        "LEZ": "./logos/leipzig.png",
+        "RMD": "./logos/madrid.png",
+        "NAP": "./logos/napoli.png",
+        "OPO": "./logos/oporto.png",
+        "PSG": "./logos/psg.png",
+        "PSV": "./logos/psv.png",
+        "RSO": "./logos/real-sociedad.png",
+    };
+
+    const etiquetasEquipos = {
+        "ARS": "Arsenal (ENG)",
+        "ATL": "Atlético (ESP)",
+        "BAR": "Barcelona (ESP)",
+        "BAY": "Bayern (GER)",
+        "BOR": "Borussia Dortmund (GER)",
+        "MAN": "Manchester City (ENG)",
+        "RMD": "Real Madrid (ESP)",
+        "RSO": "Real Sociedad (ESP)",
+        "COP": "Copenhague (DEN)",
+        "INT": "Inter (ITA)",
+        "LAZ": "Lazio (ITA)",
+        "LEZ": "Leipzig (GER)",
+        "NAP": "Nápoles (ITA)",
+        "OPO": "Oporto (POR)",
+        "PSG": "Paris (FRA)",
+        "PSV": "PSV Eindhoven (NED)"
+    };
+
+
+    function actualizarEscudo(partido, posicion, seleccion) {
+        // Construir el ID de la imagen basado en el partido y la posición (local/visitante)
+        const idImagen = `partido-${partido}-${posicion}-img`;
+        const idTexto = `partido-${partido}-${posicion}-texto`; // ID para el texto de la etiqueta
+
+        // Obtener el elemento de la imagen
+        const imagen = document.getElementById(idImagen);
+        const texto = document.getElementById(idTexto); // Elemento para el texto de la etiqueta
+
+        // Actualizar la fuente de la imagen con la ruta del escudo seleccionado
+        imagen.src = escudosEquipos[seleccion] || ''; // Usa un valor por defecto si la selección está vacía
+        texto.textContent = etiquetasEquipos[seleccion] || ''; // Actualiza el texto
+    }
+
+    // Funciones para cada selección de partido y posición
+    function seleccionarequipolocal1() {
+        const seleccion = document.getElementById('elegirpartido1local').value;
+        actualizarEscudo(1, 'local', seleccion);
+    }
+
+    function seleccionarequipovisitante1() {
+        const seleccion = document.getElementById('elegirpartido1visitante').value;
+        actualizarEscudo(1, 'visitante', seleccion);
+    }
+
+    function seleccionarequipolocal2() {
+        const seleccion = document.getElementById('elegirpartido2local').value;
+        actualizarEscudo(2, 'local', seleccion);
+    }
+
+    function seleccionarequipovisitante2() {
+        const seleccion = document.getElementById('elegirpartido2visitante').value;
+        actualizarEscudo(2, 'visitante', seleccion);
+    }
+
+    function seleccionarequipolocal3() {
+        const seleccion = document.getElementById('elegirpartido3local').value;
+        actualizarEscudo(3, 'local', seleccion);
+    }
+
+    function seleccionarequipovisitante3() {
+        const seleccion = document.getElementById('elegirpartido3visitante').value;
+        actualizarEscudo(3, 'visitante', seleccion);
+    }
+
+    function seleccionarequipolocal4() {
+        const seleccion = document.getElementById('elegirpartido4local').value;
+        actualizarEscudo(4, 'local', seleccion);
+    }
+
+    function seleccionarequipovisitante4() {
+        const seleccion = document.getElementById('elegirpartido4visitante').value;
+        actualizarEscudo(4, 'visitante', seleccion);
+    }
+
+    document.getElementById("boton-descarga").addEventListener("click", function () {
+        let jsonData = document.getElementById("jsonData").value;
+
+        if (jsonData) {
+            try {
+                let data = JSON.parse(jsonData);
+
+                document.getElementById("datoGO").innerHTML = data.GO;
+                document.getElementById("datoAS").innerHTML = data.AS;
+                document.getElementById("datoPC").innerHTML = data.PC;
+                document.getElementById("datoRC").innerHTML = data.RC;
+                document.getElementById("datoCA").innerHTML = data.CA;
+                document.getElementById("datoFP").innerHTML = data.FP;
+                document.getElementById("datoTA").innerHTML = data.TA;
+                document.getElementById("datoTR").innerHTML = data.TR;
+                document.getElementById("datoMJ").innerHTML = data.MJ;
+                document.getElementById("datoPA").innerHTML = data.PA;
+
+            } catch (e) {
+                console.error("Error al parsear el JSON:", e);
+            }
+        } else {
+            console.log("Por favor, introduce datos en el textarea");
+        }
+    });
+
+    document.getElementById("boton-descarga").addEventListener("click", function () {
+        // Obtener el elemento que queremos capturar
+        let main = document.querySelector("main");
+
+        // Usar html2canvas para obtener el canvas del elemento
+        html2canvas(main, {
+            scale: 2 // Ajusta la escala según tus necesidades
+        }).then(canvas => {
+            // Crear un elemento <a> para la descarga
+            let a = document.createElement("a");
+            a.href = canvas.toDataURL("image/jpg");
+            a.download = "imagen_descargada.jpg";
+
+            // Simular un click en el enlace para iniciar la descarga
+            document.body.appendChild(a); // Asegúrate de agregar el enlace al documento
+            a.click();
+            document.body.removeChild(a); // Opcional: elimina el enlace después de usarlo
+        });
+    });
+
+</script>
+
+
+</html>
